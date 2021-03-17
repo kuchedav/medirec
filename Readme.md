@@ -1,6 +1,6 @@
-# Natural Language Recommender
+# Medirec
 
-NLR is a Natural language Recommender which takes pdf-files as input for training and prediction and outputs the top 5 most probable labels for the target pdf-file.
+NLR is a Natural language Recommender which takes pdf-files as input for training and predicts the top 5 most probable medical labels for the target pdf-file.
 
 # Problem
 
@@ -16,7 +16,7 @@ NLR is a Natural language Recommender which takes pdf-files as input for trainin
 # Usage
 There are two ways to use this system in production
 ### Command Line
-The recommender can be used from the command line like this:
+The recommender can be used from the command line:
 ```bash
 ./FIT_model.py
 -pdf_path /path/to/pdf/file.pdf
@@ -38,7 +38,7 @@ The GUI can be opened by calling the file `./Tkinter.py`
 
 
 # Algorithm
-1. The algorithm takes in pdf-files, converts them to text and cleans the text.
+1. The algorithm takes in pdf-files as input. The pdf-files are convertet to text which then gets cleaned for NLP usage.
 2. The embedding creates a vector space from the text data.  
 3. Embeddings will be trained against the training data in text_data.csv. After the training is done the algorithm will output the top 5 categories assigned to the input pdf.
 
@@ -49,10 +49,10 @@ I have implemented two default Embeddings
   * tf-idf (fast)
   * BERT (advanced)
 
-In the code is as well the function for Word2Vec but it is not used in the application.
+The code contains as well the function for Word2Vec but it is not used in the application.
 
 ## Binary Classification
-For classification we compare many different classifiers.
+For classification we compare a variety of classifiers.
 
 Simple classifiers
 * Nearest Neighbors
